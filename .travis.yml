@@ -1,0 +1,23 @@
+language: php
+
+# The platforms you wants to test on
+os:
+  - linux
+
+php:
+  - 7.0
+  - 7.1
+
+# We don't want to run linux commands as super user
+sudo: false
+
+before_install:
+ - composer selfupdate
+ - composer install
+ - composer dump
+
+script:
+ - vendor/bin/phpunit tests
+
+notifications:
+  email: false

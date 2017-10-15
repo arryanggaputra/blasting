@@ -1,0 +1,36 @@
+{
+    "name": "arryanggaputra/blasting",
+    "description": "The Blasting Framework.",
+    "keywords": [
+        "framework",
+        "blasting"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "require":
+    {
+        "symfony/http-foundation": "^3.3",
+        "league/container": "^2.4",
+        "filp/whoops": "^2.1",
+        "phroute/phroute": "^2.1"
+    },
+    "autoload":
+    {
+        "psr-4":
+        {
+            "Blasting\\": "src/"
+        },
+        "files": ["bootstrap/helpers.php"]
+    },
+    "require-dev":
+    {
+        "phpunit/phpunit": "^6.2"
+    },
+    "scripts":
+    {
+        "test": [
+            "@phpunit"
+        ],
+        "phpunit": "php vendor/bin/phpunit tests"
+    }
+}
