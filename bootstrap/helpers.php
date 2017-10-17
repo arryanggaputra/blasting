@@ -42,3 +42,24 @@ if (!function_exists('responseJson')) {
         $response->send();
     }
 }
+
+if (!function_exists('storage_path')) {
+    function storage_path(string $path = '')
+    {
+        return __DIR__ . '/../storage/' . $path;
+    }
+}
+
+if (!function_exists('resource_path')) {
+    function resource_path(string $path = '')
+    {
+        return __DIR__ . '/../resources/' . $path;
+    }
+}
+
+if (!function_exists('view_path')) {
+    function view_path(string $path = '')
+    {
+        return resource_path('views/' . $path);
+    }
+}
