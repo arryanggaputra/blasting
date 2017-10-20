@@ -9,16 +9,17 @@
     "type": "project",
     "require":
     {
-        "symfony/http-foundation": "^3.3",
-        "league/container": "^2.4",
         "filp/whoops": "^2.1",
-        "phroute/phroute": "^2.1"
+        "twig/twig": "^2.0",
+        "league/route": "^3.0",
+        "zendframework/zend-diactoros": "^1.6"
     },
     "autoload":
     {
         "psr-4":
         {
-            "Blasting\\": "src/"
+            "Blasting\\": "src/",
+            "Systemblast\\": "system/"
         },
         "files": ["bootstrap/helpers.php"]
     },
