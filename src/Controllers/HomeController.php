@@ -7,8 +7,9 @@ namespace Blasting\Controllers;
  */
 class HomeController
 {
+
     public function index()
     {
-        echo "Hello world";
+        return view('index.html');
     }
 }
