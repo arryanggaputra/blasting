@@ -3,7 +3,7 @@
 if (!function_exists('request')) {
     /**
      * Get an instance of the current request or an input item from the request
-     * @return Symfony\Component\HttpFoundation\Request
+     * @return Zend\Diactoros\ServerRequestFactory
      */
     function request()
     {
@@ -15,7 +15,7 @@ if (!function_exists('response')) {
     /**
      * A response function holds all the information that needs
      * to be sent back to the client from a given request
-     * @return Symfony\Component\HttpFoundation\Response
+     * @return Zend\Diactoros\Response
      */
     function response()
     {
@@ -23,12 +23,12 @@ if (!function_exists('response')) {
     }
 }
 
-if (!function_exists('JsonResponse')) {
+if (!function_exists('json_response')) {
     /**
      * Response represents an HTTP response in JSON format
-     * @return Symfony\Component\HttpFoundation\Response
+     * @return Zend\Diactoros\Response\JsonResponse
      */
-    function JsonResponse($data = null)
+    function json_response($data = null)
     {
         return new Zend\Diactoros\Response\JsonResponse($data);
     }
