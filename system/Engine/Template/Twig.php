@@ -18,7 +18,8 @@ class Twig implements ViewInterface
     {
         $loader     = new \Twig_Loader_Filesystem(view_path());
         $this->view = new \Twig_Environment($loader, [
-            'cache' => storage_path('views/twig'),
+            'cache'       => storage_path('views/twig'),
+            'auto_reload' => (getenv('APP_ENV') == 'local') ? true : false,
         ]);
     }
 
