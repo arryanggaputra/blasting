@@ -12,6 +12,8 @@ class Kernel
     {
         $this->handleErrors();
 
+        $this->handleConfiguration();
+
         $route = $this->getRoutes();
 
         $route->setStrategy(new RouterStrategy);
@@ -34,5 +36,11 @@ class Kernel
     public function getRoutes()
     {
         return require_once root_path('src/Http/Routes.php');
+    }
+
+    private function handleConfiguration()
+    {
+        $dotenv = new \Dotenv\Dotenv(root_path());
+        $dotenv->load();
     }
 }

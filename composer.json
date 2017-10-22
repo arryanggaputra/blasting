@@ -12,7 +12,8 @@
         "filp/whoops": "^2.1",
         "twig/twig": "^2.0",
         "league/route": "^3.0",
-        "zendframework/zend-diactoros": "^1.6"
+        "zendframework/zend-diactoros": "^1.6",
+        "vlucas/phpdotenv": "^2.4"
     },
     "autoload":
     {
