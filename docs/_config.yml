@@ -18,7 +18,7 @@ tagline: Frameworkless For Fun
 email: arryanggaputra@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Blasting is a PHP Frameworkless that helps you quickly learn and run yet powerful web applications without pain, such as Laravel, Symfony, etc.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/blasting" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: arryanggaputra
 github_username:  arryanggaputra

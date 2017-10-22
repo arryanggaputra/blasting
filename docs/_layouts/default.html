@@ -11,12 +11,12 @@
     {% endif %} {% if page.url == '/' %}
     <meta name="description" content="{{ site.description }}"> {% else %}
     <meta name="description" content="{{ page.description }}"> {% endif %}
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
 </head>
 
 <body>
     <header>
-        <a class="logo" href="/">
+        <a class="logo" href="{{ site.baseurl }}">
             <span class="name">{{ site.title }}</span>
             <span class="tagline">{{ site.tagline }}</span>
         </a>
@@ -33,7 +33,7 @@
             <ul>
                 {% for link in section[1] %}
                 <li {% if page.url==link[1] %}class="selected" {% endif %}>
-                    <a href="{{ link[1] }}">{{ link[0] }}</a>
+                    <a href="{{ site.baseurl }}{{ link[1] }}">{{ link[0] }}</a>
                 </li>
                 {% endfor %}
             </ul>
