@@ -12,7 +12,7 @@ class Kernel
     {
         $this->handleErrors();
 
-        $route = require_once root_path('src/Http/Routes.php');
+        $route = $this->getRoutes();
 
         $route->setStrategy(new RouterStrategy);
 
@@ -29,5 +29,10 @@ class Kernel
         $whoops = new \Whoops\Run;
         $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
         $whoops->register();
+    }
+
+    public function getRoutes()
+    {
+        return require_once root_path('src/Http/Routes.php');
     }
 }
