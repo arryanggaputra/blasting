@@ -2,11 +2,11 @@ Getting Started:
     Installation: '/'
 
 Learn More:
-    "Routing": ''
-    "Request": ''
-    "View & Response": ''
-    "Controllers": ''
-    "Middlewares": ''
+    "Routing": '/routing'
+    "Request": '/request'
+    "View & Response": '/view-response'
+    "Controllers": '/controllers'
+    "Middlewares": '/middlewares'
 
 More Depth:
     "Authentication": ''
