@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /
+---
+
 # Blasting - Frameworkless For Fun
 
 [![Build Status](https://travis-ci.org/arryanggaputra/blasting.svg?branch=master)](https://travis-ci.org/arryanggaputra/blasting)
@@ -12,3 +17,4 @@ It's recommended that you download directly from [Github](https://github.com/arr
 ```bash
 $ git clone https://github.com/arryanggaputra/blasting
 ```
+
