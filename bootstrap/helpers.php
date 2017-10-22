@@ -81,3 +81,14 @@ if (!function_exists('view')) {
         return new Zend\Diactoros\Response\HtmlResponse($view->render($path, $data));
     }
 }
+
+if (!function_exists('input')) {
+    function input(string $key = null, $default = null)
+    {
+        $queryParams = request()->getQueryParams();
+        if ($key !== null) {
+            $queryParams = (isset($queryParams[$key])) ?: $default;
+        }
+        return $queryParams;
+    }
+}
