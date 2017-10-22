@@ -321,7 +321,7 @@ table {
 }
 
 html {
-    background-color: #19242f;
+    background-color: #333;
 }
 
 @media screen and (max-width: 549px) {
@@ -677,7 +677,7 @@ main {
         right: 100%;
         background-size: 50% 1px;
         background-repeat: repeat-y;
-        background-image: linear-gradient(#2b3d50 100%, #2b3d50 100%);
+        /* background-image: linear-gradient(#2b3d50 100%, #2b3d50 100%); */
     }
 }
 
@@ -693,7 +693,7 @@ main {
     main {
         background-size: 250px 1px;
         background-repeat: repeat-y;
-        background-image: linear-gradient(#2b3d50 100%, #2b3d50 100%);
+        /* background-image: linear-gradient(#2b3d50 100%, #2b3d50 100%); */
     }
 }
 
@@ -704,7 +704,7 @@ main menu {
 
 main menu h2 {
     font-family: "Museo 300";
-    color: #d6dadb;
+    color: #39a1d7;
     line-height: 100%;
     font-weight: normal;
     text-transform: uppercase;
@@ -720,7 +720,7 @@ main menu ul li a {
     padding: 8px 3px 6px 0;
     display: block;
     font-family: "Museo 300";
-    color: #6abcdd;
+    color: #333;
     line-height: 100%;
     font-weight: normal;
     text-decoration: none;
@@ -729,12 +729,17 @@ main menu ul li a {
 }
 
 main menu ul li a:hover {
-    color: #a8d8eb;
+    color: #000;
     padding: 8px 0 6px 3px;
 }
 
 main menu ul li.selected {
-    background: #22303f;
+    /* background: #ff4244; */
+}
+
+main menu ul li.selected a {
+    /* background: #ff4244; */
+    font-weight: bold;
 }
 
 @media screen and (max-width: 549px) {
@@ -968,7 +973,7 @@ main article .quick_links li a.twitter {
     }
     main article h1 {
         margin: 50px 0 30px 0;
-        font-size: 70px;
+        font-size: 46px;
     }
     main article h2 {
         margin: 50px 0 15px 0;

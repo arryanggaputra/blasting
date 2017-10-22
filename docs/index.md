@@ -3,7 +3,7 @@ layout: default
 permalink: /
 ---
 
-# Blasting - Frameworkless For Fun
+# Blasting - Frameworkless
 
 [![Build Status](https://travis-ci.org/arryanggaputra/blasting.svg?branch=master)](https://travis-ci.org/arryanggaputra/blasting)
 [![Total Downloads](https://poser.pugx.org/arryanggaputra/blasting/downloads)](https://packagist.org/packages/arryanggaputra/blasting)
@@ -12,9 +12,15 @@ permalink: /
 
 Blasting is a PHP Frameworkless that helps you quickly learn and run yet powerful web applications without framework, such as Laravel, Symfony, etc.
 
-## Installation
-It's recommended that you download directly from [Github](https://github.com/arryanggaputra/blasting), or just clone the repository
+## Installation & First Run
 ```bash
-$ git clone https://github.com/arryanggaputra/blasting
+mkdir newproject && cd newproject
+wget https://github.com/arryanggaputra/blasting/archive/master.zip
+unzip master.zip
+mv blasting-master/* .
+rm -R master.zip blasting-master
+composer install
+php -S localhost:8000 server.php
 ```
 
+Open your browser and go to `http://localhost:8000`
