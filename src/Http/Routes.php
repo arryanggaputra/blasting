@@ -3,8 +3,8 @@
 /**
  * Routes
  */
-$route = new League\Route\RouteCollection;
+$router = new League\Route\RouteCollection;
 
-$route->get('/', '\Blasting\Controllers\HomeController::index');
+$router->get('/', '\Blasting\Controllers\HomeController::index');
 
-return $route;
+return $router;
