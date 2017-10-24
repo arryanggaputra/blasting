@@ -2,9 +2,6 @@
 
 namespace Blasting\Controllers;
 
-/**
- *
- */
 class HomeController
 {
 
