@@ -8,17 +8,7 @@ if (!function_exists('request')) {
      */
     function request()
     {
-        /**
-         * to get the same $_SERVER['REQUEST_URI'] on both localhost and live server
-         */
-        if ($_SERVER['HTTP_HOST'] == 'localhost') {
-            $url                    = preg_replace('#^https?://#', '', $_SERVER['APP_URL']);
-            $url                    = str_replace($_SERVER['HTTP_HOST'], '', $url);
-            $_SERVER['REQUEST_URI'] = str_replace($url, '', $_SERVER['REQUEST_URI']);
-        }
-        return Zend\Diactoros\ServerRequestFactory::fromGlobals(
-            $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES
-        );
+        return app()->container->get('request');
     }
 }
 
