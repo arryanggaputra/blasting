@@ -1,0 +1,2 @@
+[application/x-www-form-urlencoded or multipart/form-data?](https://stackoverflow.com/questions/4007969/application-x-www-form-urlencoded-or-multipart-form-data)
+[PUT vs. POST in REST](https://stackoverflow.com/questions/630453/put-vs-post-in-rest)
