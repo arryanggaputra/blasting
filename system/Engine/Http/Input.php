@@ -2,9 +2,6 @@
 
 namespace Systemblast\Engine\Http;
 
-/**
- *
- */
 class Input
 {
     protected $request;
@@ -20,16 +17,33 @@ class Input
         $this->fromUrlencodedData = [];
     }
 
+    /**
+     * Get all request input
+     *
+     * @return array
+     */
     public function getAll()
     {
         return $this->combineAllData();
     }
 
+    /**
+     * Get request input by input key
+     *
+     * @param  string|null  $key
+     * @param  string|null  $default
+     * @return string|object|null|array
+     */
     public function get(string $key = null, $default = null)
     {
         return $this->getAll()[$key] ?? $default;
     }
 
+    /**
+     * combine all requet input into single array
+     *
+     * @return array
+     */
     private function combineAllData()
     {
         // if http method is PUT and content-type is application/x-www-form-urlencoded

@@ -23,6 +23,13 @@ class Twig implements ViewInterface
         ]);
     }
 
+    /**
+     * Render twig to html string
+     *
+     * @param  string $path view filename
+     * @param  array  $data data to represent to the client
+     * @return string
+     */
     public function render(string $path, array $data = []): string
     {
         return $this->view->render($path, $data);
