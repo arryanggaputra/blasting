@@ -109,12 +109,7 @@ if (!function_exists('app')) {
      */
     function app()
     {
-        $dependencies = require_once __DIR__ . '/../config/dependency.php';
-        $container    = new League\Container\Container;
-        foreach ($dependencies as $interface => $implementation) {
-            $container->share($interface, $implementation);
-        }
-        return $container;
+        return Systemblast\Engine\Foundation\Application::make();
     }
 }
 
@@ -128,7 +123,7 @@ if (!function_exists('view')) {
      */
     function view(string $path, array $data = [])
     {
-        $view = app()->get('Systemblast\Interfaces\View');
+        $view = app()->container->get('Systemblast\Interfaces\View');
         return new Zend\Diactoros\Response\HtmlResponse($view->render($path, $data));
     }
 }
