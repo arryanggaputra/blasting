@@ -30,6 +30,9 @@
     },
     "scripts":
     {
+        "post-dependencies-solving": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
         "test": [
             "@phpunit"
         ],
