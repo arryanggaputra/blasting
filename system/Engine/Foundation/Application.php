@@ -10,6 +10,18 @@ class Application
     {
         $dependencies = require_once root_path('config/dependency.php');
         $container    = new \League\Container\Container;
+
+        /**
+         * Container has the power to automatically resolve your objects
+         * and all of their dependencies recursively by inspecting the type hints
+         * of your constructor arguments
+         *
+         * @see  http://container.thephpleague.com/3.x/auto-wiring/
+         */
+        $container->delegate(
+            new \League\Container\ReflectionContainer
+        );
+
         foreach ($dependencies['singleton'] as $interface => $implementation) {
             $container->share($interface, $implementation);
         }
@@ -17,6 +29,7 @@ class Application
         foreach ($dependencies['binding'] as $interface => $implementation) {
             $container->add($interface, $implementation);
         }
+
         $this->container = $container;
     }
 
