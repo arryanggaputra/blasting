@@ -126,6 +126,6 @@ if (!function_exists('input')) {
      */
     function input()
     {
-        return new Systemblast\Engine\Http\Input;
+        return app()->container->get('input');
     }
 }
