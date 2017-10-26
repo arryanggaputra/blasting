@@ -19,7 +19,7 @@ class Request
         /**
          * to get the same $_SERVER['REQUEST_URI'] on both localhost and live server
          */
-        if ($_SERVER['HTTP_HOST'] == 'localhost') {
+        if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'localhost') {
             $url                    = preg_replace('#^https?://#', '', $_SERVER['APP_URL']);
             $url                    = str_replace($_SERVER['HTTP_HOST'], '', $url);
             $_SERVER['REQUEST_URI'] = str_replace($url, '', $_SERVER['REQUEST_URI']);
