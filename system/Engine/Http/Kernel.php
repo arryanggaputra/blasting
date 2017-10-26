@@ -9,6 +9,25 @@ class Kernel
 {
 
     /**
+     * The Router instance.
+     *
+     * @var \League\Route\RouteCollection
+     */
+    protected $router;
+
+    /**
+     * Blasting Framework Instance
+     *
+     * @var Systemblast\Engine\Foundation\Application
+     */
+    protected $app;
+
+    public function __construct()
+    {
+        $this->app = app();
+    }
+
+    /**
      * This is the core of the whole application
      * to handle incoming request
      *
@@ -20,19 +39,28 @@ class Kernel
 
         $this->handleConfiguration();
 
-        $route = $this->getRoutes();
+        $this->router->setStrategy(new RouterStrategy);
 
-        $route->setStrategy(new RouterStrategy);
-
-        $response = $route->dispatch(request(), response());
+        $response = $this->router->dispatch(request(), response());
 
         (new SapiEmitter)->emit($response);
     }
 
     /**
-     * PHP errors for cool kids
-     * http://filp.github.io/whoops/
+     * Set the router instance.
      *
+     * @return void
+     */
+    public function setRouter(\Closure $callback)
+    {
+        $this->router = new \League\Route\RouteCollection($this->app->container);
+        call_user_func($callback, $this->router);
+    }
+
+    /**
+     * PHP errors for cool kids
+     *
+     * @see  http://filp.github.io/whoops/
      * @return void
      */
     private function handleErrors()
@@ -40,16 +68,6 @@ class Kernel
         $whoops = new \Whoops\Run;
         $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
         $whoops->register();
-    }
-
-    /**
-     * Get all registered route
-     *
-     * @return void
-     */
-    public function getRoutes()
-    {
-        return require_once root_path('src/Http/Routes.php');
     }
 
     /**
