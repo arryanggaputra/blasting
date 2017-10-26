@@ -22,7 +22,7 @@ class HelperTest extends TestCase
         $this->assertInstanceOf(Zend\Diactoros\ServerRequest::class, request());
         $this->assertInstanceOf(Zend\Diactoros\Response::class, response());
         $this->assertInstanceOf(Zend\Diactoros\Response\JsonResponse::class, json_response());
-        $this->assertInstanceOf(League\Container\Container::class, app());
+        $this->assertInstanceOf(Systemblast\Engine\Foundation\Application::class, app());
 
     }
 }
