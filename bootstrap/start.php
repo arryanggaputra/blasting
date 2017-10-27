@@ -1,6 +1,12 @@
 <?php declare (strict_types = 1);
 require_once __DIR__ . '/../vendor/autoload.php';
 
+try {
+    (new Dotenv\Dotenv(root_path()))->load();
+} catch (Dotenv\Exception\InvalidPathException $e) {
+    throw $e;
+}
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application

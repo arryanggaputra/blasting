@@ -53,7 +53,6 @@ class Input
             in_array('application/x-www-form-urlencoded', $this->request->getHeader('content-type'))
         ) {
             parse_str($this->request->getBody()->getContents(), $this->fromUrlencodedData);
-
         }
 
         // if header content-type is application/json, we need to decode the json input

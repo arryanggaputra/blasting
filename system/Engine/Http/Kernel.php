@@ -35,10 +35,6 @@ class Kernel
      */
     public function listen()
     {
-        $this->handleErrors();
-
-        $this->handleConfiguration();
-
         $this->router->setStrategy(new RouterStrategy);
 
         $response = $this->router->dispatch(request(), response());
@@ -57,27 +53,4 @@ class Kernel
         call_user_func($callback, $this->router);
     }
 
-    /**
-     * PHP errors for cool kids
-     *
-     * @see  http://filp.github.io/whoops/
-     * @return void
-     */
-    private function handleErrors()
-    {
-        $whoops = new \Whoops\Run;
-        $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
-        $whoops->register();
-    }
-
-    /**
-     * load .env configuration file
-     *
-     * @return void
-     */
-    private function handleConfiguration()
-    {
-        $dotenv = new \Dotenv\Dotenv(root_path());
-        $dotenv->load();
-    }
 }
