@@ -13,7 +13,8 @@
         "twig/twig": "^2.0",
         "league/route": "^3.0",
         "zendframework/zend-diactoros": "^1.6",
-        "vlucas/phpdotenv": "^2.4"
+        "vlucas/phpdotenv": "^2.4",
+        "catfan/Medoo": "^1.4"
     },
     "autoload":
     {
@@ -30,7 +31,7 @@
     },
     "scripts":
     {
-        "post-dependencies-solving": [
+        "post-install-cmd": [
             "php -r \"copy('.env.example', '.env');\""
         ],
         "test": [

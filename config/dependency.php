@@ -15,7 +15,7 @@ return [
      */
     'singleton' => [
         Systemblast\Interfaces\View::class => \Systemblast\Engine\Template\Twig::class,
-        'request'                          => \Systemblast\Engine\Http\Request::make(),
+        'request'                          => \Systemblast\Engine\Http\Request::class,
         'input'                            => \Systemblast\Engine\Http\Input::class,
     ],
 ];
