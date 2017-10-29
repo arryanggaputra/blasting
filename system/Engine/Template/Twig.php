@@ -21,6 +21,12 @@ class Twig implements ViewInterface
             'cache'       => storage_path('views/twig'),
             'auto_reload' => (env('APP_ENV') == 'local') ? true : false,
         ]);
+
+        $public_path = new \Twig_SimpleFunction('public_path', function ($public_path) {
+            return $public_path;
+        });
+
+        $this->view->addFunction($public_path);
     }
 
     /**
